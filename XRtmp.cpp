@@ -15,20 +15,31 @@ public:
 
     void close()
     {
+
         if(ic)
         {
+            if(url.substr(0, 4) != "rtmp")
+                av_write_trailer(ic);
+            if(ic->pb)
+                avio_close(ic->pb);
             avformat_close_input(&ic);
-            vs = NULL;
         }
+        vs = NULL;
+        as = NULL;
         vc = NULL;
+        ac = NULL;
         url.clear();
     }
     bool init(const char* url)
     {
         // 输出封装器和视频流配置
         // a 创建输出封装器上下文
-        int ret = avformat_alloc_output_context2(&ic, 0, "flv", url);
         this->url = url;
+        int ret = -1;
+        if(this->url.substr(0, 4) == "rtmp")
+            ret = avformat_alloc_output_context2(&ic, 0, "flv", url);
+        else
+            ret = avformat_alloc_output_context2(&ic, 0, 0, url);
         if(ret != 0)
         {
             char buf[1024] = { 0 };
