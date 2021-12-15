@@ -1,5 +1,29 @@
 # 说明
 
+本仓库代码实现功能：
+
+对视频源和声音源进行处理后推流到直播服务器进行播放
+
+声音源：
+
+- 声音录制设备（基于QT录制）
+- 文件
+
+视频源
+
+- 视频录制设备
+- rtsp协议
+- 文件
+
+图像处理：
+
+- 基于opencv
+- 使用openvino部署nanodet
+
+
+
+注意点：
+
 1. 使用的是openvino 2021版本 ffmpeg3.x版本 opencv是openvino中带的4.5版本
 2. QT用的是msvc64 5.9.9版本
 3. 本地测试openvino的debug模式有问题，release模式没问题
