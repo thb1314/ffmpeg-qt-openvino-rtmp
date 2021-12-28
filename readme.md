@@ -44,7 +44,7 @@
 5. main.cpp中有各种demo，包括视频来源或者声音来源是文件或者硬件设备，导出可以是直播推流或者导出到文件
 6. 配置好pro文件中`ffmpeg`、`opencv`、`openvino`的路径(ffmpeg的包在Release里可以下载)
 7. 将openvino的相关路径加入环境变量，或者参考我视频中的做法
-8. nanodet转openvino下的模型参考 https://github.com/RangiLyu/nanodet/tree/main/demo_openvino
+8. nanodet转openvino下的模型参考 https://github.com/RangiLyu/nanodet/tree/main/demo_openvino和本人自己做的https://www.bilibili.com/video/BV1bq4y1z7RR/、https://github.com/thb1314/nanodet-openvino
 9. 直播rtmp服务搭建使用的是`nginx-rtmp`，搭建在远程linux中，源码里写localhost是因为用了ssh端口映射映射到了本地
 10. 软件还有诸多问题，仅仅是一个demo，发现问题还请在issue区提问。
 
